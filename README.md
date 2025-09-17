@@ -2,7 +2,7 @@
 
 # Lien moodboard:
 
-[Moodboard - Justin Montpetit](figma.com/design/3zsOANctXFTvEn5GO61XX3/Portfolio---Planification?t=3hOjNBmnrfTOljFN-0)
+https://www.figma.com/design/3zsOANctXFTvEn5GO61XX3/Portfolio---Planification?node-id=0-1&m=dev&t=3hOjNBmnrfTOljFN-1
 
 ## Calendrier
 
