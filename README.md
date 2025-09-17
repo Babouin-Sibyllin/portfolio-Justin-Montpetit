@@ -11,6 +11,10 @@ https://www.figma.com/design/3zsOANctXFTvEn5GO61XX3/Portfolio---Planification?no
 <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/939da3ee-ac13-482b-a49e-16b0f0bec34f" />
 <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/b31c3e9c-a71f-4245-bc1b-c5ece568a111" />
 
+## Animation Gsap:
+
+Animation à l'ouverture du site web
+
 ## type de navigation
 
 - Carrousel
