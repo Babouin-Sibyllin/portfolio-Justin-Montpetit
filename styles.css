@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+}
+
+body {
+    background-color: orange;
+}
+
+header {
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 0px 0px 15px 15px;
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+    align-items: center;
+}
+
+h3 {
+    color: white;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.Window {
+    margin: 0px 25px 0px 25px;
+}
+
+.icon {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.apps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+    background-color: aqua;
+    margin: 20px 0px 0px 20px;
+}
+ 
+.icon1 {
+    background-image: url(./Image/BackgroundIcon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon2 {
+    background-image: url(./Image/PortfolioIcon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.icon3 {
+    background-image: url(./Image/BoxingGloveIcon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.icon4 {
+    background-image: url(./Image/QuebecIcon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
+.icon5 {
+    background-image: url(./Image/CarIcon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column-start: 1;
+    grid-row-start: 5;
+}
+
+.icon6 {
+    background-image: url(./Image/RedDoorIcon.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column-start: 1;
+    grid-row-start: 6;
+}
+
+.icon7 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.icon8 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.TEST {
+    background-color: red;
+}
+
+.screen {
+    display: flex;
+}
