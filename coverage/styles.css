@@ -3,17 +3,30 @@
 }
 
 body {
-    background-color: orange;
+    background-image: url(./images/BaseBackground.jpg);
+   /* background-color: black; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header {
-    background-color: blue;
+    background: #ffffff;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(4, 4, 204, 1) 15%);
     border: 2px solid black;
     border-radius: 0px 0px 15px 15px;
     display: flex;
     justify-content: flex-start;
     height: 50px;
     align-items: center;
+}
+
+h1 {
+    color: white;
+    margin-left: 10px;
+    margin-right: 30px;
+    font-size: 20px;
+    text-align: center;
 }
 
 h3 {
@@ -24,24 +37,41 @@ h3 {
 
 .Window {
     margin: 0px 25px 0px 25px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding-top: 3px;
+}
+
+.Window:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .icon {
     height: 100px;
     width: 100px;
-    border: 2px solid black;
+    /*border: 2px solid black; */
     margin: 10px 20px 10px 20px;
+}
+
+.icon:hover {
+    cursor:pointer;
 }
 
 .apps {
     display:flex;
     flex-direction: row;
-    background-color: aqua;
     margin: 20px 0px 0px 20px;
 }
 
 .AppNames {
     text-align: center;
+    color: white;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.8);
 }
 
 .icon1 {
@@ -86,9 +116,19 @@ h3 {
     background-repeat: no-repeat;
 }
 
-.icon7 {}
+.icon7 {
+    background-image: url(./images/BaseBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-.icon8 {}
+.icon8 {
+    background-image: url(./images/BaseBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .screen {
     display: flex;
