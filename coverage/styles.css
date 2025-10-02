@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 header {
@@ -133,3 +134,42 @@ h3 {
 .screen {
     display: flex;
 }
+
+.fake-window1 {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 400px;
+      background: white;
+      border: 2px solid blue;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      transform-origin: 50% 50%;
+    }
+ 
+    .window-header1 {
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      cursor: move;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+ 
+    .window-body1 {
+      padding: 20px;
+    }
+ 
+    .window-close1 {
+      background: #e74c3c;
+      border: none;
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 10%;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 25px;
+      text-align: center;
+    }

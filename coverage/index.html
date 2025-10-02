@@ -19,7 +19,7 @@
     <div class="screen">
         <div class="apps">
             <div class="Row1">
-                <div ondblclick="alert('pas configuré!')" class=" icon icon1"></div>
+                <div ondblclick="openPage()" class=" icon icon1"></div>
                 <p class="AppNames">Fond d'écran</p>
                 <div ondblclick="alert('pas configuré!')" class="icon icon2"></div>
                 <p class="AppNames">Projets</p>
@@ -39,9 +39,20 @@
                 <p class="AppNames">Application</p>
             </div>
         </div>
+
+        <!-- The "computer window" -->
+        <div id="computerWindow1" class="fake-window1">
+            <div class="window-header1" id="dragHandle1">
+                <span>Fond d'écran</span>
+                <button class="window-close1" id="closeBtn1">X</button>
+            </div>
+            <div class="window-body1">
+                <p>Voici les options de fonds d'écrans disponibles:</p>
+            </div>
+        </div>
     </div>
 
-
+    <script src="Script.js"></script>
 </body>
 
 </html>
