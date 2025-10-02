@@ -6,52 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Justin M</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
 </head>
 
-<body>
-    <header>
-        <h1>Justin Montpetit - PORTFOLIO</h1>
-        <button onclick="alert('pas configuré')" class="Window">À propos</button>
-        <button onclick="alert('pas configuré')" class="Window">Projets</button>
-        <button onclick="alert('pas configuré')" class="Window">Logiciels</button>
-    </header>
+<body id="bodyID">
+        <header>
+            <h1 class="Windowsh1">Justin Montpetit - PORTFOLIO</h1>
+            <button onclick="alert('pas configuré')" class="Window">À propos</button>
+            <button onclick="alert('pas configuré')" class="Window">Projets</button>
+            <button onclick="alert('pas configuré')" class="Window">Logiciels</button>
+        </header>
 
-    <div class="screen">
-        <div class="apps">
-            <div class="Row1">
-                <div ondblclick="openPage()" class=" icon icon1"></div>
-                <p class="AppNames">Fond d'écran</p>
-                <div ondblclick="alert('pas configuré!')" class="icon icon2"></div>
-                <p class="AppNames">Projets</p>
-                <div ondblclick="alert('pas configuré!')" class="icon icon3"></div>
-                <p class="AppNames">Shadow Box</p>
-                <div ondblclick="alert('pas configuré!')" class="icon icon4"></div>
-                <p class="AppNames">La Nuit des-</p>
-                <div ondblclick="alert('pas configuré!')" class="icon icon5"></div>
-                <p class="AppNames">Terminus</p>
-                <div ondblclick="alert('pas configuré!')" class="icon icon6"></div>
-                <p class="AppNames">Perte</p>
+        <div class="intro"></div>
+
+        <div ondblclick="screenClick()" class="screen" id="screenID">
+            <div class="apps">
+                <div class="Row1">
+                    <div ondblclick="openPage()" class=" icon icon1"></div>
+                    <p class="AppNames">Fond d'écran</p>
+                    <div ondblclick="alert('pas configuré!')" class="icon icon2"></div>
+                    <p class="AppNames">Projets</p>
+                    <div ondblclick="alert('pas configuré!')" class="icon icon3"></div>
+                    <p class="AppNames">Shadow Box</p>
+                    <div ondblclick="alert('pas configuré!')" class="icon icon4"></div>
+                    <p class="AppNames">La Nuit des-</p>
+                    <div ondblclick="alert('pas configuré!')" class="icon icon5"></div>
+                    <p class="AppNames">Terminus</p>
+                    <div ondblclick="alert('pas configuré!')" class="icon icon6"></div>
+                    <p class="AppNames">Perte</p>
+                </div>
+                <div class="row2">
+                    <div ondblclick="alert('pas configuré!')" class="icon icon7"></div>
+                    <p class="AppNames">Application</p>
+                    <div ondblclick="alert('pas configuré!')" class="icon icon8"></div>
+                    <p class="AppNames">Application</p>
+                </div>
             </div>
-            <div class="row2">
-                <div ondblclick="alert('pas configuré!')" class="icon icon7"></div>
-                <p class="AppNames">Application</p>
-                <div ondblclick="alert('pas configuré!')" class="icon icon8"></div>
-                <p class="AppNames">Application</p>
+
+            <!-- The "computer window" -->
+            <div id="computerWindow1" class="fake-window1">
+                <div class="window-header1" id="dragHandle1">
+                    <span>Fond d'écran</span>
+                    <button class="window-close1" id="closeBtn1">X</button>
+                </div>
+                <div class="window-body1">
+                    <p>Définir un nouveau fond d'écran:</p>
+                    <div class="BackgroundGroup">
+                        <button onclick="background1()" id="background1"
+                            class="BackgroundSelection BackgroundSelection1"></button>
+                        <button onclick="background2()" class="BackgroundSelection BackgroundSelection2"></button>
+                        <button onclick="background3()" class="BackgroundSelection BackgroundSelection3"></button>
+                        <button class="BackgroundSelection BackgroundSelection4"></button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- The "computer window" -->
-        <div id="computerWindow1" class="fake-window1">
-            <div class="window-header1" id="dragHandle1">
-                <span>Fond d'écran</span>
-                <button class="window-close1" id="closeBtn1">X</button>
-            </div>
-            <div class="window-body1">
-                <p>Voici les options de fonds d'écrans disponibles:</p>
+
+        <div class="phoneScreen">
+            <div class="phoneApps">
+                <div class="phoneIcon phoneIcon1"></div>
+                <div class="phoneIcon phoneIcon2"></div>
+                <div class="phoneIcon phoneIcon3"></div>
+                <div class="phoneIcon phoneIcon4"></div>
+                <div class="phoneIcon phoneIcon5"></div>
+                <div class="phoneIcon phoneIcon6"></div>
+                <div class="phoneIcon phoneIcon7"></div>
+                <div class="phoneIcon phoneIcon8"></div>
             </div>
         </div>
-    </div>
-
     <script src="Script.js"></script>
 </body>
 
