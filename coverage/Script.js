@@ -20,8 +20,9 @@ AppclickOnce.forEach(element => {
 
 function openPage() {
     windowDiv1.style.display = 'block';
-    windowDiv1.style.top = '50%';
-    windowDiv1.style.left = '50%';
+    windowDiv1.style.top = '50vh';
+    windowDiv1.style.left = '50vw';
+    windowDiv1.style.transform = 'translate(-50%, -50%)';
 }
 
 closeBtn1.addEventListener('click', () => {
