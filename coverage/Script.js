@@ -21,15 +21,15 @@ AppclickOnce.forEach(element => {
 });
 
 function background1() {
-  document.getElementById("bodyID").style.backgroundImage = "url(./images/BaseBackground.jpg)"
+  document.getElementById("screenID").style.backgroundImage = "url(./images/BaseBackground.jpg)"
 }
 
 function background2() {
-  document.getElementById("bodyID").style.backgroundImage = "url(./images/Windows7Background.jpg)"
+  document.getElementById("screenID").style.backgroundImage = "url(./images/PlageBackground.jpg)"
 }
 
 function background3() {
-  document.getElementById("bodyID").style.backgroundImage = "url(./images/LionWallpaper.jpg)"
+  document.getElementById("screenID").style.backgroundImage = "url(./images/LionWallpaper.jpg)"
 }
 
 function openPage() {
