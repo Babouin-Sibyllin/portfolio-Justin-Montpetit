@@ -15,7 +15,7 @@
         <h1 class="Windowsh1">Justin Montpetit - PORTFOLIO</h1>
     </div>
         <button onclick="alert('pas configuré')" class="Window">À propos</button>
-        <button onclick="alert('pas configuré')" class="Window">Projets</button>
+        <button onclick="openPage2()" class="Window">Projets</button>
         <button onclick="alert('pas configuré')" class="Window">Logiciels</button>
     </header>
 
@@ -24,42 +24,42 @@
     <div ondblclick="screenClick()" class="screen" id="screenID">
         <div class="apps">
         <div class="Row1">
-            <div>
-                <div ondblclick="openPage()" class=" icon icon1"></div>
+            <div class="fullIcon">
+                <div ondblclick="openPage1()" class=" icon icon1"></div>
                 <p class="AppNames">Fond d'écran</p>
             </div>
-            <div>
-                <div ondblclick="alert('pas configuré!')" class="icon icon2"></div>
+            <div class="fullIcon">
+                <div ondblclick="openPage2()" class="icon icon2"></div>
                 <p class="AppNames">Projets</p>
             </div>
-            <div>
+            <div class="fullIcon">
                 <div ondblclick="alert('pas configuré!')" class="icon icon3"></div>
                 <p class="AppNames">Shadow Box</p>
             </div>
-            <div>
+            <div class="fullIcon">
                 <div ondblclick="alert('pas configuré!')" class="icon icon4"></div>
                 <p class="AppNames">La Nuit des-</p>
             </div>
-            <div>
+            <div class="fullIcon">
                 <div ondblclick="alert('pas configuré!')" class="icon icon5"></div>
                 <p class="AppNames">Terminus</p>
             </div>
-            <div>
+            <div class="fullIcon">
                 <div ondblclick="alert('pas configuré!')" class="icon icon6"></div>
                 <p class="AppNames">Perte</p>
             </div>
-            <div>
+            <div class="fullIcon">
                 <div ondblclick="alert('pas configuré!')" class="icon icon7"></div>
                 <p class="AppNames">Application</p>
             </div>
-            <div>
+            <div class="fullIcon">
                 <div ondblclick="alert('pas configuré!')" class="icon icon8"></div>
                 <p class="AppNames">Application</p>
             </div>
         </div>
     </div>
 
-        <!-- The "window fond d'écran" -->
+        <!-- window fond d'écran -->
         <div id="computerWindow1" class="fake-window1">
             <div class="window-header1" id="dragHandle1">
                 <span>Fond d'écran</span>
@@ -76,7 +76,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- window Projets -->
+        <div id="computerWindow2" class="fake-window2">
+            <div class="window-header2" id="dragHandle2">
+                <span>Projets</span>
+                <button class="window-close2" id="closeBtn2">X</button>
+            </div>
+            <div class="window-body2">
+
+            </div>
+        </div>
     </div>
+
+
 
     <!-- Responsive téléphone -->
     <div class="phoneScreen">

@@ -3,6 +3,8 @@ let activeIcon = null;
 const openBtn1 = document.getElementsByClassName('icon1')
 const windowDiv1 = document.getElementById('computerWindow1');
 const closeBtn1 = document.getElementById('closeBtn1');
+const windowDiv2 = document.getElementById('computerWindow2');
+const closeBtn2 = document.getElementById('closeBtn2');
 let WindowScreen = document.getElementById('screenID');
 
 
@@ -32,7 +34,7 @@ function background3() {
   document.getElementById("screenID").style.backgroundImage = "url(./images/LionWallpaper.jpg)"
 }
 
-function openPage() {
+function openPage1() {
   windowDiv1.style.display = 'block';
   windowDiv1.style.top = '50vh';
   windowDiv1.style.left = '50vw';
@@ -68,7 +70,7 @@ function dragElement(elmnt) {
     e.preventDefault();
     pos3 = e.clientX;
     pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
+    document.onmouseup = closeDragElement1;
     document.onmousemove = elementDrag;
   }
 
@@ -82,7 +84,7 @@ function dragElement(elmnt) {
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   }
 
-  function closeDragElement() {
+  function closeDragElement1() {
     document.onmouseup = null;
     document.onmousemove = null;
   }
@@ -98,3 +100,69 @@ OpenIntro.to({}, {
     opacity: 0,
     display: "none"
   });
+
+
+
+  //window 2
+
+  //fonction utilisée pour afficher la page
+  function openPage2() {
+    windowDiv2.style.display = 'block';
+    windowDiv2.style.top = '50vh';
+    windowDiv2.style.left = '50vw';
+    windowDiv2.style.transform = 'translate(-50%, -50%)';
+  }
+  
+  //bouton rouge pour fermer la page
+  closeBtn2.addEventListener('click', () => {
+    windowDiv2.style.display = 'none';
+  });
+  
+  
+  function screenClick2() {
+    AppclickOnce.forEach((app) => {
+      app.style.backgroundColor = "";
+    });
+  }
+  
+  //fonction pour que la page suive la souris
+  
+  dragElement2(windowDiv2);
+  
+  function dragElement2(elmnt) {
+    const header = document.getElementById("dragHandle2");
+    let pos1 = 0,
+      pos2 = 0,
+      pos3 = 0,
+      pos4 = 0;
+  
+    if (header) {
+      header.onmousedown = dragMouseDown2;
+    }
+  
+    //fonction pour que la page suive la souris
+    function dragMouseDown2(e) {
+      e.preventDefault();
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement2;
+      document.onmousemove = elementDrag2;
+    }
+  
+    //fonction pour que la page suive la souris
+    function elementDrag2(e) {
+      e.preventDefault();
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    //fonction pour arrêter que la souris suive
+    function closeDragElement2() {
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
