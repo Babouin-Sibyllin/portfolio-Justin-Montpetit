@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Justin M</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
 </head>
 
 <body id="bodyID">
-    <header>
+    <main id="app">
+        <div class="intro"></div>
+    <header >
         <div class="nameTitle">
         <h1 class="Windowsh1">Justin Montpetit - PORTFOLIO</h1>
     </div>
@@ -19,7 +22,7 @@
         <button onclick="alert('pas configuré')" class="Window">Logiciels</button>
     </header>
 
-    <div class="intro"></div>
+    
 
     <div ondblclick="screenClick()" class="screen" id="screenID">
         <div class="apps">
@@ -84,7 +87,9 @@
                 <button class="window-close2" id="closeBtn2">X</button>
             </div>
             <div class="window-body2">
-
+                <div v-for="projets in projects">
+                    <div>{{projets.images}}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -147,7 +152,10 @@
             <button class="phoneHomeButton"></button>
         </div>
     </div>
+    </main>
     <script src="Script.js"></script>
+    <script src="ScriptVue.js"></script>
+    
 </body>
 
 </html>

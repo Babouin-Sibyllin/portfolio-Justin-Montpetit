@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100vw;
     background: #ffffff;
@@ -197,8 +197,9 @@ header {
     border: 2px solid #0404cc;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: none;
-    width: 25vw;
-    height: 25vh;
+    width: 35vw;
+    max-height: 75vh;
+    overflow: auto;
 }
 
 .window-header2 {
@@ -265,13 +266,13 @@ header {
 }
 
 .intro {
+    position: absolute;
     background-color: black;
-    height: 100vh;
+    height: 105vh;
     width: 100%;
     left: 0;
     top: 0;
     opacity: 1;
-    position: absolute;
     z-index: 38;
 }
 

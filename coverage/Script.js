@@ -1,3 +1,36 @@
+
+const { createApp } = Vue;
+
+
+createApp({
+    data() {
+        return {
+          puceau: "puceau",
+          projects: []
+        };
+    },
+
+    mounted() {
+            fetch('./projects.json')
+                .then(data => data.json())
+                .then(donnees => {
+                    this.projects = donnees;
+                });
+    },
+
+    methods: {
+
+    },
+
+})
+
+
+    .mount('#app');
+
+
+
+
+
 const AppclickOnce = document.querySelectorAll('.icon');
 let activeIcon = null;
 const openBtn1 = document.getElementsByClassName('icon1')
@@ -89,6 +122,8 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+
 
 let OpenIntro = gsap.timeline();
 
