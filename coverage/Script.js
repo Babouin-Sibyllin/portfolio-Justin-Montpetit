@@ -1,59 +1,81 @@
+//JAVASCRIPT VUE
 
 const { createApp } = Vue;
 
 
 createApp({
-    data() {
-        return {
-          puceau: "puceau",
-          projects: []
-        };
-    },
+  data() {
+    return {
+      puceau: "puceau",
+      projects: []
+    };
+  },
 
-    mounted() {
-            fetch('./projects.json')
-                .then(data => data.json())
-                .then(donnees => {
-                    this.projects = donnees;
-                });
-    },
+  mounted() {
+    fetch('./projects.json')
+      .then(data => data.json())
+      .then(donnees => {
+        this.projects = donnees;
+      });
+  },
 
-    methods: {
+  methods: {
 
-    },
+  },
 
 })
 
 
-    .mount('#app');
+  .mount('#app');
+
+//FIN DU JAVASCRIPT VUE
 
 
-
-
+// DÉBUT DU JAVASCRIPT NORMAL
 
 const AppclickOnce = document.querySelectorAll('.icon');
 let activeIcon = null;
 const openBtn1 = document.getElementsByClassName('icon1')
-const windowDiv1 = document.getElementById('computerWindow1');
-const closeBtn1 = document.getElementById('closeBtn1');
-const windowDiv2 = document.getElementById('computerWindow2');
-const closeBtn2 = document.getElementById('closeBtn2');
 let WindowScreen = document.getElementById('screenID');
+const windowDivs = {};
+const closeBtns = {};
+let globalIndex = 1;
 
 
 AppclickOnce.forEach(element => {
-  element.addEventListener('click', () => {
+  element.addEventListener('click', (e) => {
+
+    //empêche le click de se déclencher dans tout les parents
+    e.stopPropagation(); 
+
+    //si il y a un "activeIcon" et que celui si n'est pas le même que "element", ça retire le fond bleu de l'icone actif
     if (activeIcon && activeIcon !== element) {
-      /* vérifie si active icon contient une donnée, & si cette donnée n'est pas la même que la précédente*/
-      activeIcon.style.backgroundColor = ''; /* si l'icone cliqué n'est pas le même, enlever le fond bleu */
+      activeIcon.style.backgroundColor = ''; 
     }
 
-    element.style.backgroundColor = 'rgba(0, 0, 255, 0.2)'; /* Ajouter le fond bleu sur l'icone actuellement sélectionné */
-
-    activeIcon = element;
-
+    //Si l'icone (celui précédemment cliqué) est le même que element (cliqué actuellement), alors il retire le fond bleu
+    //activeIcon retourne à "null" (rien)
+    if (activeIcon === element) {
+      element.style.backgroundColor = '';
+      activeIcon = null; 
+    } else {
+      //si l'icone actuellement cliqué n'est pas le même, alors il applique le fond bleu à ce nouvel icone, et déclare ActiveIcon...
+      // ... en tant que ce nouvel icone
+      element.style.backgroundColor = 'rgba(0, 0, 255, 0.2)'; 
+      activeIcon = element; 
+    }
   });
 });
+
+// lorsque l'utilisateur clique n'importe ou sur la page, si il y a un activeIcon, il retire le fond bleu, et remet activeIcon à null
+document.addEventListener('click', () => {
+  if (activeIcon) {
+    activeIcon.style.backgroundColor = '';
+    activeIcon = null;
+  }
+});
+
+
 
 function background1() {
   document.getElementById("screenID").style.backgroundImage = "url(./images/BaseBackground.jpg)"
@@ -67,137 +89,79 @@ function background3() {
   document.getElementById("screenID").style.backgroundImage = "url(./images/LionWallpaper.jpg)"
 }
 
-function openPage1() {
-  windowDiv1.style.display = 'block';
-  windowDiv1.style.top = '50vh';
-  windowDiv1.style.left = '50vw';
-  windowDiv1.style.transform = 'translate(-50%, -50%)';
-}
 
-closeBtn1.addEventListener('click', () => {
-  windowDiv1.style.display = 'none';
-});
-
-
-function screenClick() {
-  AppclickOnce.forEach((app) => {
-    app.style.backgroundColor = "";
-  });
-}
-
-
-dragElement(windowDiv1);
-
-function dragElement(elmnt) {
-  const header = document.getElementById("dragHandle1");
-  let pos1 = 0,
-    pos2 = 0,
-    pos3 = 0,
-    pos4 = 0;
-
-  if (header) {
-    header.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement1;
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement1() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
 
 
 
 let OpenIntro = gsap.timeline();
 
 OpenIntro.to({}, {
-    duration: 0.5
-  })
+  duration: 0.5
+})
   .to(".intro", {
     duration: 1,
     opacity: 0,
     display: "none"
   });
 
+//SYSTÈME FAUSSES FENÊTRE WINDOWS
 
+// Loop through all your windows (1–10)
+for (let i = 1; i <= 10; i++) {
+  const windowDiv = document.getElementById(`computerWindow${i}`);
+  const closeBtn = document.getElementById(`closeBtn${i}`);
+  const dragHandle = document.getElementById(`dragHandle${i}`);
 
-  //window 2
+  // Skip if this window doesn’t exist in the HTML
+  if (!windowDiv || !closeBtn || !dragHandle) continue;
 
-  //fonction utilisée pour afficher la page
-  function openPage2() {
-    windowDiv2.style.display = 'block';
-    windowDiv2.style.top = '50vh';
-    windowDiv2.style.left = '50vw';
-    windowDiv2.style.transform = 'translate(-50%, -50%)';
-  }
-  
-  //bouton rouge pour fermer la page
-  closeBtn2.addEventListener('click', () => {
-    windowDiv2.style.display = 'none';
+  // Store them for later access
+  windowDivs[i] = windowDiv;
+  closeBtns[i] = closeBtn;
+
+  // --- Open Function ---
+  window[`openPage${i}`] = function () {
+    windowDiv.style.display = 'block';
+    windowDiv.style.top = '50vh';
+    windowDiv.style.left = '50vw';
+    windowDiv.style.transform = 'translate(-50%, -50%)';
+    windowDiv.style.zIndex = globalIndex;
+    globalIndex++;
+  };
+
+  // --- Close Button Function ---
+  closeBtn.addEventListener('click', () => {
+    windowDiv.style.display = 'none';
   });
-  
-  
-  function screenClick2() {
-    AppclickOnce.forEach((app) => {
-      app.style.backgroundColor = "";
-    });
-  }
-  
-  //fonction pour que la page suive la souris
-  
-  dragElement2(windowDiv2);
-  
-  function dragElement2(elmnt) {
-    const header = document.getElementById("dragHandle2");
-    let pos1 = 0,
-      pos2 = 0,
-      pos3 = 0,
-      pos4 = 0;
-  
-    if (header) {
-      header.onmousedown = dragMouseDown2;
-    }
-  
-    //fonction pour que la page suive la souris
-    function dragMouseDown2(e) {
-      e.preventDefault();
+
+  // --- Make Window Draggable ---
+  dragHandle.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+
+    // La fenêtre actuelle se voit appliqué un css z-index qui évolue continuellement, la mettant par dessus les autres
+    windowDiv.style.zIndex = globalIndex;
+    globalIndex++;
+
+    let pos3 = e.clientX;
+    let pos4 = e.clientY;
+
+    const onMouseMove = (e) => {
+      const pos1 = pos3 - e.clientX;
+      const pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
-      document.onmouseup = closeDragElement2;
-      document.onmousemove = elementDrag2;
-    }
-  
-    //fonction pour que la page suive la souris
-    function elementDrag2(e) {
-      e.preventDefault();
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    }
-  
-    //fonction pour arrêter que la souris suive
-    function closeDragElement2() {
-      document.onmouseup = null;
-      document.onmousemove = null;
-    }
-  }
+      windowDiv.style.top = (windowDiv.offsetTop - pos2) + "px";
+      windowDiv.style.left = (windowDiv.offsetLeft - pos1) + "px";
+    };
+
+    const onMouseUp = () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+}
+
+

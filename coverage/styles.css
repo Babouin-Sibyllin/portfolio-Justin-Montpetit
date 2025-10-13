@@ -19,6 +19,7 @@ header {
     justify-content: flex-start;
     height: 50px;
     align-items: center;
+    z-index: 1000;
 }
 
 .Windowsh1 {
@@ -153,6 +154,42 @@ header {
     display: flex;
 }
 
+.fake-window {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: white;
+    border: 2px solid #0404cc;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 25vw;
+    height: 25vh;
+}
+
+.window-header {
+    background-color: #0404cc;
+    color: white;
+    padding: 10px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.window-close {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 10%;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+}
+
 .fake-window1 {
     position: absolute;
     top: 100px;
@@ -273,7 +310,7 @@ header {
     left: 0;
     top: 0;
     opacity: 1;
-    z-index: 38;
+    z-index: 1038;
 }
 
 .phoneScreen {
