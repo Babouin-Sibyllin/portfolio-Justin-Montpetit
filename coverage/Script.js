@@ -6,7 +6,6 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      puceau: "puceau",
       projects: []
     };
   },
@@ -20,7 +19,17 @@ createApp({
   },
 
   methods: {
-
+    handleImageClick(id) {
+      if (id == 1) {
+        openPage3()
+      } else if (id == 2) {
+        openPage4()
+      } else if (id == 3) {
+        openPage5()
+      } else {
+        openPage6()
+      }
+    }
   },
 
 })
@@ -46,23 +55,23 @@ AppclickOnce.forEach(element => {
   element.addEventListener('click', (e) => {
 
     //empêche le click de se déclencher dans tout les parents
-    e.stopPropagation(); 
+    e.stopPropagation();
 
     //si il y a un "activeIcon" et que celui si n'est pas le même que "element", ça retire le fond bleu de l'icone actif
     if (activeIcon && activeIcon !== element) {
-      activeIcon.style.backgroundColor = ''; 
+      activeIcon.style.backgroundColor = '';
     }
 
     //Si l'icone (celui précédemment cliqué) est le même que element (cliqué actuellement), alors il retire le fond bleu
     //activeIcon retourne à "null" (rien)
     if (activeIcon === element) {
       element.style.backgroundColor = '';
-      activeIcon = null; 
+      activeIcon = null;
     } else {
       //si l'icone actuellement cliqué n'est pas le même, alors il applique le fond bleu à ce nouvel icone, et déclare ActiveIcon...
       // ... en tant que ce nouvel icone
-      element.style.backgroundColor = 'rgba(0, 0, 255, 0.2)'; 
-      activeIcon = element; 
+      element.style.backgroundColor = 'rgba(0, 0, 255, 0.2)';
+      activeIcon = element;
     }
   });
 });
@@ -121,7 +130,9 @@ for (let i = 1; i <= 10; i++) {
 
   // --- Open Function ---
   window[`openPage${i}`] = function () {
-    windowDiv.style.display = 'block';
+    if (i == 2) {
+      windowDiv.style.display = 'flex'
+    } else { windowDiv.style.display = 'block'; }
     windowDiv.style.top = '50vh';
     windowDiv.style.left = '50vw';
     windowDiv.style.transform = 'translate(-50%, -50%)';

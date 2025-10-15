@@ -3,36 +3,24 @@
     "id": 1,
     "title": "Shadow Box",
     "category": "Jeu vidéo",
-    "images": "./images/BaseBackground.jpg"
+    "images": "./images/ShadowBox.png"
   },
   {
     "id": 2,
     "title": "La Nuit des Longs Couteaux",
     "category": "jeu vidéo",
-    "images": [
-        "./chemin/vers/votre/img2-1.jpg",
-        "./chemin/vers/votre/img2-2.jpg",
-        "./chemin/vers/votre/img2-3.jpg"
-        ]
+    "images": "./images/LaNuitDesLongsCouteaux.png"
   },
   {
     "id": 3,
     "title": "Terminus",
     "category": "Vidéo",
-    "images": [
-        "./chemin/vers/votre/img2-1.jpg",
-        "./chemin/vers/votre/img2-2.jpg",
-        "./chemin/vers/votre/img2-3.jpg"
-        ]
+    "images": "./images/Terminus.png"
   },
   {
     "id": 4,
     "title": "Perte",
     "category": "Vidéo 3D",
-    "images": [
-        "./chemin/vers/votre/img2-1.jpg",
-        "./chemin/vers/votre/img2-2.jpg",
-        "./chemin/vers/votre/img2-3.jpg"
-        ]
+    "images": "./images/Perte.png"
   }
 ]
