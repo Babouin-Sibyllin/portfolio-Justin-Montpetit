@@ -191,11 +191,6 @@ header {
     text-align: center;
 }
 
-.window-body {
-    overflow: auto;
-    flex: 1;
-}
-
 .fake-window1 {
     position: absolute;
     top: 100px;
@@ -236,13 +231,13 @@ header {
     position: absolute;
     top: 50vh;
     left: 50vw;
-    transform: translate(-50%, -75%);
+    transform: translate(-50%, -50%);
     background: white;
     border: 2px solid #0404cc;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: none;
     width: 55vw;
-    height: 55vh;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -270,6 +265,12 @@ header {
     font-weight: bold;
     line-height: 25px;
     text-align: center;
+}
+
+.window-body {
+    height: 100%;
+    flex:1;
+    overflow: auto;
 }
 
 
@@ -326,9 +327,26 @@ header {
     display: none;
 }
 
+.window-body2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+}
+
 .imagesProjets {
     width: 100%;
     aspect-ratio: 2/1;
+}
+
+.ProjectsContainer {
+    height: 100%;
+}
+
+.centerText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .imagesProjets:hover {

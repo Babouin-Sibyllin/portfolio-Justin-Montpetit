@@ -87,10 +87,10 @@
                     <button class="window-close2 window-close" id="closeBtn2">X</button>
                 </div>
                 <div class="window-body2 window-body">
-                    <div class="heroImages" v-for="projets in projects" :id="projets.id"
+                    <div class="ProjectsContainer"  v-for="projets in projects" :id="projets.id"
                         @click="handleImageClick(projets.id)">
                         <div>
-                            <img class="imagesProjets" :src="projets.images">
+                            <img  class="imagesProjets" :src="projets.images">
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,9 @@
                     <span>Shadow Box</span>
                     <button class="window-close3 window-close" id="closeBtn3">X</button>
                 </div>
-                <div class="window-body3 window-body"></div>
+                <div class="window-body3 window-body">
+                    <div class="centerText"><h1>Shadow Box</h1><h2>Jeu vidéo</h2></div>
+                </div>
             </div>
 
             <!-- window La nuit des Longs Couteaux -->
