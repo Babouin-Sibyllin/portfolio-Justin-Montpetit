@@ -98,7 +98,26 @@ function background3() {
   document.getElementById("screenID").style.backgroundImage = "url(./images/LionWallpaper.jpg)"
 }
 
+document.addEventListener("DOMContentLoaded", function () {
 
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+          autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  
+  });
 
 
 
