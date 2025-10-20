@@ -104,8 +104,6 @@ header {
     text-align: center;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    /* AI */
-
     user-select: none;
 }
 
@@ -152,7 +150,7 @@ header {
 }
 
 .icon7 {
-    background-image: url(./images/BaseBackground.jpg);
+    background-image: url(./images/Mitsubishi_Lancer.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -291,12 +289,22 @@ header {
     width: 55vw;
 }
 
+.fake-window5 {
+    height: 85vh;
+    width: 55vw;
+}
+
 .window-body {
     height: 100%;
     flex:1;
     overflow: auto;
 }
 
+.window-body4 {
+    height:100%;
+    flex:1;
+    overflow: hidden;
+}
 
 .BackgroundGroup {
     display: flex;
@@ -347,6 +355,7 @@ header {
     z-index: 1038;
 }
 
+/*empêche d'afficher l'écran de téléphone en mode windows*/
 .phoneScreen {
     display: none;
 }
@@ -615,5 +624,6 @@ header {
         margin-left: 10px
     }
 
+    
 
 }
