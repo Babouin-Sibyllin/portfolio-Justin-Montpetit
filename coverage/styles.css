@@ -3,17 +3,17 @@
 }
 
 @font-face {
-  font-family: 'Jersey25';
-  src: url("./fonts/Jersey_25/Jersey25-Regular.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Jersey25';
+    src: url("./fonts/Jersey_25/Jersey25-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Saira';
-  src: url("./fonts/Saira/static/Saira-Regular.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Saira';
+    src: url("./fonts/Saira/static/Saira-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -296,13 +296,13 @@ header {
 
 .window-body {
     height: 100%;
-    flex:1;
+    flex: 1;
     overflow: auto;
 }
 
 .window-body4 {
-    height:100%;
-    flex:1;
+    height: 100%;
+    flex: 1;
     overflow: hidden;
 }
 
@@ -391,9 +391,29 @@ header {
     height: 100px;
 }
 
+.embeddedGame {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gameNotDisplayed {
+    display: none;
+}
 
 
+/* retire le jeu implémenté dans la fenêtre si celle-ci est trop petite*/
+@media only screen and (max-width: 1475px) {
+    .embeddedGame {
+        display: none;
+    }
 
+    .gameNotDisplayed {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
 
 
 
@@ -624,6 +644,6 @@ header {
         margin-left: 10px
     }
 
-    
+
 
 }

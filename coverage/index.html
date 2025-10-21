@@ -10,7 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -124,7 +124,32 @@
                     <button class="window-close4 window-close" id="closeBtn4">X</button>
                 </div>
                 <div class="window-body4 window-body">
-                    <iframe src="https://html-classic.itch.zone/html/12208113/La_nuit_des_longs_couteaux/index.html" width="100%" height="100%"></iframe>
+                    <div class="embeddedGame">
+                        <iframe src="https://html-classic.itch.zone/html/12208113/La_nuit_des_longs_couteaux/index.html"
+                            width="100%" height="100%"></iframe>
+                    </div>
+                    <div class="gameNotDisplayed">
+                        <div style="border: solid 2px #0404cc;" class="card">
+                            <div class="swiper mySwiper card-img-top">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                            src="./images/LNDLC_Home.png"></div>
+                                    <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                            src="./images/LNDLC_Mort.png"></div>
+                                    <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                            src="./images/LNDLC_CapQC.png"></div>
+                                    <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                            src="./images/LNDLC_Reunion.png"></div>
+                                </div>
+                                <div class="swiper-button-next text-white"></div>
+                                <div class="swiper-button-prev text-white"></div>
+                            </div>
+                        </div>
+                        <div class="centerText">
+                            <h1 style="font-size: 56px;" class="PageFont">Terminus</h1>
+                            <h2 style="font-size: 56px; " class="PageFont">Court-métrage</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -208,7 +233,9 @@
 
 
 
-        <!-- interface téléphone --> <!-- interface téléphone --> <!-- interface téléphone -->
+        <!-- interface téléphone -->
+        <!-- interface téléphone -->
+        <!-- interface téléphone -->
         <!-- interface téléphone -->
 
 
