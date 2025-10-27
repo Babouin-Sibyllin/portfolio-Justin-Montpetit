@@ -40,11 +40,95 @@ createApp({
 //FIN DU JAVASCRIPT VUE
 
 
-// DÉBUT DU JAVASCRIPT NORMAL
+// -------------------------------------------------------------------------------------------------------------------------------
+
+//DÉBUT DU JAVASCRIPT POUR L'AFFICHAGE TÉLÉPHONE
+let isVisible = false;
+
+
+
+function PhoneBackground() {
+  document.getElementById("PhoneScreenID").style.backgroundImage = "url(./images/PhoneBackground.jpg)";
+}
+
+function PhoneBackground1() {
+  document.getElementById("PhoneScreenID").style.backgroundImage = "url(./images/PhoneBackground1.avif)";
+}
+
+function PhoneBackground2() {
+  document.getElementById("PhoneScreenID").style.backgroundImage = "url(./images/PhoneBackground2.avif)";
+}
+
+function PhoneBackground3() {
+  document.getElementById("PhoneScreenID").style.backgroundImage = "url(./images/PhoneBackground3.avif)";
+}
+
+function AffichePhoneApp(App) {
+  let OpenedApp = document.getElementById(`PhoneAppOpen${App}`)
+  OpenedApp.style.display = 'block';
+  isVisible = true;
+
+  //Anime l'application téléphone en ouverture
+  gsap.fromTo(OpenedApp,
+    {
+      scale: 0.3,
+      y: window.innerHeight / 2,
+      opacity: 0,
+      borderRadius: "28px"
+    },
+    {
+      duration: 0.8,
+      scale: 1,
+      y: 0,
+      opacity: 1,
+      borderRadius: "0px",
+      ease: "power4.out"
+    }
+  );
+}
+
+function CachePhoneApp() {
+  let EveryApps = document.getElementsByClassName('PhoneAppOpen');
+  //vérifie toutes les classes AppOpen et les cachent
+  for (let i = 0; i < EveryApps.length; i++) {
+
+    // J'ai retiré display none sinon l'animation ne fontione pas
+    //EveryApps[i].style.display = 'none';
+
+    //Animation pour la fermeture de l'app téléphone
+    if (isVisible) {
+      gsap.fromTo(EveryApps[i],
+        {
+          duration: 0.8,
+          scale: 1,
+          y: 0,
+          opacity: 1,
+          borderRadius: "0px",
+          ease: "power4.out"
+        },
+        {
+
+          scale: 0.3,
+          y: window.innerHeight / 2,
+          opacity: 0,
+          borderRadius: "28px"
+        }
+      );
+    }
+  }
+
+  //Empêche la répétition de l'animation de fermeture
+  isVisible = false;
+}
+
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+// DÉBUT DU JAVASCRIPT POUR L'AFFICHAGE WINDOWS
 
 const AppclickOnce = document.querySelectorAll('.icon');
 let activeIcon = null;
-const openBtn1 = document.getElementsByClassName('icon1')
+const openBtn1 = document.getElementsByClassName('icon1');
 let WindowScreen = document.getElementById('screenID');
 const windowDivs = {};
 const closeBtns = {};
@@ -86,6 +170,9 @@ document.addEventListener('click', () => {
 
 
 
+
+// fonctions utilisées pour changer le fond d'écran windows
+
 function background1() {
   document.getElementById("screenID").style.backgroundImage = "url(./images/BaseBackground.jpg)"
 }
@@ -100,26 +187,28 @@ function background3() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    var swiper = new Swiper(".mySwiper", {
-      cssMode: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-          autoplay: {
+  var swiper = new Swiper(".mySwiper", {
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
       delay: 4500,
       disableOnInteraction: false,
     },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      mousewheel: true,
-      keyboard: true,
-    });
-  
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
   });
 
+});
 
+
+
+//Animation ouverture de l'écran
 
 let OpenIntro = gsap.timeline();
 
@@ -132,50 +221,61 @@ OpenIntro.to({}, {
     display: "none"
   });
 
+
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
 //SYSTÈME FAUSSES FENÊTRE WINDOWS
 
-// Loop through all your windows (1–10)
+// Loop à travers toutes mes fenêtres (1–10)
 for (let i = 1; i <= 10; i++) {
   const windowDiv = document.getElementById(`computerWindow${i}`);
   const closeBtn = document.getElementById(`closeBtn${i}`);
   const dragHandle = document.getElementById(`dragHandle${i}`);
 
-  // Skip if this window doesn’t exist in the HTML
+  // En cas d'erreur de numéro, il ignore
   if (!windowDiv || !closeBtn || !dragHandle) continue;
 
-  // Store them for later access
+  // stock les données pour plus tard
   windowDivs[i] = windowDiv;
   closeBtns[i] = closeBtn;
 
-  // --- Open Function ---
+  // --- Fonction qui permet d'ouvrir une page ---
   window[`openPage${i}`] = function () {
+    // If i == 2 car le window 2 est la fenêtre des projets et requiert exceptionnelement un diplay flex.
     if (i == 2) {
       windowDiv.style.display = 'flex'
     } else { windowDiv.style.display = 'block'; }
+    //Place la fenêtre au milieu de l'écran (permet le responsive)
     windowDiv.style.top = '50vh';
     windowDiv.style.left = '50vw';
+    //Permet de réellement centrer la fenêtre
     windowDiv.style.transform = 'translate(-50%, -50%)';
+    //Permet d'afficher la fenêtre au dessus des autres déjà ouvertes
     windowDiv.style.zIndex = globalIndex;
     globalIndex++;
   };
 
-  // --- Close Button Function ---
+  // --- Permet de fermer la fenêtre ---
   closeBtn.addEventListener('click', () => {
     windowDiv.style.display = 'none';
   });
 
-  // --- Make Window Draggable ---
+  // --- Rend la page "draggable" ---
   dragHandle.addEventListener('mousedown', (e) => {
+    //empêche la page d'avoir son comportement original
     e.preventDefault();
 
     // La fenêtre actuelle se voit appliqué un css z-index qui évolue continuellement, la mettant par dessus les autres
     windowDiv.style.zIndex = globalIndex;
     globalIndex++;
 
+    // pos3 = position en X & pos4 = position en Y 
     let pos3 = e.clientX;
     let pos4 = e.clientY;
 
     const onMouseMove = (e) => {
+      // pos1 & 2 = la nouvelle position de la souris (ancienne position - position actuelle)
       const pos1 = pos3 - e.clientX;
       const pos2 = pos4 - e.clientY;
       pos3 = e.clientX;

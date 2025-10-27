@@ -10,7 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -19,7 +19,10 @@
 
 <body id="bodyID">
     <main id="app">
+        <!-- Intro est le fade-in noir au début -->
         <div class="intro"></div>
+
+        <!-- Barre bleue au bas de l'écran -->
         <header>
             <div class="nameTitle">
                 <h1 class="Windowsh1 PageFont">Justin Montpetit - PORTFOLIO</h1>
@@ -30,7 +33,7 @@
         </header>
 
 
-
+        <!-- Interface des applications en portrait ordinateur -->
         <div ondblclick="screenClick()" class="screen" id="screenID">
             <div class="apps">
                 <div class="Row1">
@@ -149,6 +152,16 @@
                             <h1 style="font-size: 56px;" class="PageFont">Terminus</h1>
                             <h2 style="font-size: 56px; " class="PageFont">Court-métrage</h2>
                         </div>
+                        <div class="ProjectDescription">
+                        <p style="font-size: large; text-align: center; margin: 0 25% 0 25%;">La Nuit des Longs Couteaux 
+                            est un jeu réalisé par <b>Justin Montpetit</b> à propos de l'événement historique du même nom
+                            dans lequel le joueur incarne René Lévesque, se dépêchant à aller assister à la réunion à Hull
+                        </p>
+                    </div>
+                     <!-- Bouton Youtube -->
+                      <div style="display: flex; justify-content: center; margin-top: 20px;">
+                    <button onclick="window.open('//html-classic.itch.zone/html/12208113/La_nuit_des_longs_couteaux/index.html')" class=".buttonOld">Jouer !</button>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -160,26 +173,41 @@
                     <button class="window-close5 window-close" id="closeBtn5">X</button>
                 </div>
                 <div class="window-body5 window-body">
+                    <!-- Début de la fenêtre -->
                     <div style="border: solid 2px #0404cc;" class="card">
                         <div class="swiper mySwiper card-img-top">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide"><img class="w-100" style="height: 300px;"
-                                        src="./images/LNDLC_Home.png"></div>
+                                        src="./images/Terminus.png"></div>
                                 <div class="swiper-slide"><img class="w-100" style="height: 300px;"
-                                        src="./images/LNDLC_Mort.png"></div>
+                                        src="./images/TerminusImage1.png"></div>
                                 <div class="swiper-slide"><img class="w-100" style="height: 300px;"
-                                        src="./images/LNDLC_CapQC.png"></div>
+                                        src="./images/TerminusImage2.png"></div>
                                 <div class="swiper-slide"><img class="w-100" style="height: 300px;"
-                                        src="./images/LNDLC_Reunion.png"></div>
+                                        src="./images/TerminusImage3.png"></div>
                             </div>
                             <div class="swiper-button-next text-white"></div>
                             <div class="swiper-button-prev text-white"></div>
                         </div>
                     </div>
-                    <div class="centerText">
+                    <div class="centerText" style="margin-top: 20px;">
                         <h1 style="font-size: 56px;" class="PageFont">Terminus</h1>
                         <h2 style="font-size: 56px; " class="PageFont">Court-métrage</h2>
                     </div>
+                    <div class="ProjectDescription">
+                        <p style="font-size: large; text-align: center; margin: 0 25% 0 25%;">Terminus est un court
+                            métrage réalisé par <b>Justin Montpetit</b>, <b>Alexandre Gendron</b>,
+                            <b>Mathieu Willet</b>, <b>Mikael Arseneau</b> et <b>Sandrine Jean</b>. Terminus raconte les
+                            effets
+                            négatifs de l'alcool au volant.
+                        </p>
+                    </div>
+                    <!-- From Uiverse.io by vikramsinghnegi -->
+                     <!-- Bouton Youtube -->
+                      <div style="display: flex; justify-content: center; margin-top: 20px;">
+                    <button onclick="window.open('//www.youtube.com/watch?v=ubJ5NW0lCwo')" class=".buttonOld">Visionner sur Youtube</button>
+                    </div>
+                    <!-- Fin de la fenêtre -->
                 </div>
             </div>
 
@@ -190,6 +218,38 @@
                     <button class="window-close6 window-close" id="closeBtn6">X</button>
                 </div>
                 <div class="window-body6 window-body">
+                    <!-- Début de la fenêtre -->
+                    <div style="border: solid 2px #0404cc;" class="card">
+                        <div class="swiper mySwiper card-img-top">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                        src="./images/Perte.png"></div>
+                                <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                        src="./images/PerteImage1.png"></div>
+                                <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                        src="./images/PerteImage2.png"></div>
+                                <div class="swiper-slide"><img class="w-100" style="height: 300px;"
+                                        src="./images/PerteImage3.png"></div>
+                            </div>
+                            <div class="swiper-button-next text-white"></div>
+                            <div class="swiper-button-prev text-white"></div>
+                        </div>
+                    </div>
+                    <div class="centerText" style="margin-top: 20px;">
+                        <h1 style="font-size: 56px;" class="PageFont">Perte</h1>
+                        <h2 style="font-size: 56px; " class="PageFont">Court-métrage 3D</h2>
+                    </div>
+                    <div class="ProjectDescription">
+                        <p style="font-size: large; text-align: center; margin: 0 25% 0 25%;">Perte est un court
+                            métrage 3D réalisé par <b>Justin Montpetit</b> à l'aide de Maya et Davinci représentant
+                            l'exclusion sociale de façon abstraite.
+                        </p>
+                    </div>
+                     <!-- Bouton Youtube -->
+                      <div style="display: flex; justify-content: center; margin-top: 20px;">
+                    <button onclick="window.open('//www.youtube.com/watch?v=gq0ULOzFDTA')"  class=".buttonOld">Visionner sur Youtube</button>
+                    </div>
+                    <!-- Fin de la fenêtre -->
                 </div>
             </div>
 
@@ -199,7 +259,9 @@
                     <span class="PageFont">Voiture</span>
                     <button class="window-close7 window-close" id="closeBtn7">X</button>
                 </div>
-                <div class="window-body7 window-body"></div>
+                <div class="window-body7 window-body">
+                    
+                </div>
             </div>
 
             <!-- window ?? -->
@@ -234,12 +296,9 @@
 
 
         <!-- interface téléphone -->
-        <!-- interface téléphone -->
-        <!-- interface téléphone -->
-        <!-- interface téléphone -->
 
 
-        <div class="phoneScreen">
+        <div class="phoneScreen" id="PhoneScreenID">
             <div class="phoneTop">
                 <div class="phoneTopText sim">SIM 4K</div>
                 <div class="phoneTopText time">38:38</div>
@@ -250,48 +309,175 @@
             </div>
             <div class="phoneApps">
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon1"></div>
+                    <div onclick="AffichePhoneApp(1)" class="phoneIcon phoneIcon1"></div>
                     <p class="phoneAppNames">Fond d'écran</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon2"></div>
+                    <div onclick="AffichePhoneApp(2)" class="phoneIcon phoneIcon2"></div>
                     <p class="phoneAppNames">Projets</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon3"></div>
+                    <div onclick="AffichePhoneApp(3)" class="phoneIcon phoneIcon3"></div>
                     <p class="phoneAppNames">Shadow Box</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon4"></div>
+                    <div onclick="AffichePhoneApp(4)" class="phoneIcon phoneIcon4"></div>
                     <p class="phoneAppNames">La Nuit des-</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon5"></div>
+                    <div onclick="AffichePhoneApp(5)" class="phoneIcon phoneIcon5"></div>
                     <p class="phoneAppNames">Terminus</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon6"></div>
+                    <div onclick="AffichePhoneApp(6)" class="phoneIcon phoneIcon6"></div>
                     <p class="phoneAppNames">Perte</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon7"></div>
+                    <div onclick="AffichePhoneApp(7)" class="phoneIcon phoneIcon7"></div>
                     <p class="phoneAppNames">Musique</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon8"></div>
+                    <div onclick="AffichePhoneApp(8)" class="phoneIcon phoneIcon8"></div>
                     <p class="phoneAppNames">À propos</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon9"></div>
+                    <div onclick="AffichePhoneApp(9)" class="phoneIcon phoneIcon9"></div>
                     <p class="phoneAppNames">Logiciels</p>
                 </div>
                 <div class="phoneAppCenter">
-                    <div onclick="alert('pas configuré!')" class="phoneIcon phoneIcon10"></div>
+                    <div onclick="AffichePhoneApp(10)" class="phoneIcon phoneIcon10"></div>
                     <p class="phoneAppNames">Application</p>
                 </div>
+
+
+                <!-- Applications ouvertes -->
+
+                <!-- Fond d'écran TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen1">
+                    <h1 style="margin: 20px; color: aliceblue;">Définir un nouveau fond d'écran:</h1>
+                    <div class="PhoneImageContainer">
+                        <img onclick="PhoneBackground()" style="width: 150px; height: 267px; margin: 5px;"
+                            src="./images/PhoneBackground.jpg">
+                        <img onclick="PhoneBackground1()" style="width: 150px; height: 267px; margin: 5px;"
+                            src="./images/PhoneBackground1.avif">
+                        <img onclick="PhoneBackground2()" style="width: 150px; height: 267px; margin: 5px;"
+                            src="./images/PhoneBackground2.avif">
+                        <img onclick=" PhoneBackground3()" style="width: 150px; height: 267px; margin: 5px;"
+                            src="./images/PhoneBackground3.avif">
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen2">
+                    <h1 style="margin: 20px; color: aliceblue;">PROJETS</h1>
+                    <div class="PhoneProjets">
+                        <div class="PhoneMyProject PhoneMyProject1"><img src="./images/LaNuitDesLongsCouteaux.png"></div>
+                        <div class="PhoneMyProject PhoneMyProject2"><img src="./images/Perte.png" alt=""></div>
+                        <div class="PhoneMyProject PhoneMyProject3"><img src="./images/Terminus.png" alt=""></div>
+                        <div class="PhoneMyProject PhoneMyProject4"><img src="./images/ShadowBox.png" alt=""></div>
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen3">
+                    <h1 style="margin: 20px; color: aliceblue;">Shadow Box</h1>
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen4">
+                    <h1 style="margin: 20px; color: aliceblue;">La nuit des longs couteaux</h1>
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen5">
+                    <h1 style="margin: 20px; color: aliceblue;">Terminus</h1>
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen6">
+                    <h1 style="margin: 20px; color: aliceblue;">Perte</h1>
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- Musique TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen7">
+                    <h1 style="margin: 20px; color: aliceblue;">Musique</h1>
+                    <div>
+                        <div
+                            style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 20px 0;">
+                            <h5 style="color: aliceblue;">Ahmed & l'éclipse</h5>
+                            <img style="width: 100px; height:100px; margin-bottom: 10px;"
+                                src="./images/CapitaineQuebecAlbum.png" alt="">
+                            <audio controls>
+                                <source src="./audios/Ahmed et l'éclipse - Audio.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                        <div
+                            style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 20px 0;">
+                            <h5 style="color: aliceblue;">Le magicien du web</h5>
+                            <img style="width: 100px; height:100px; margin-bottom: 10px;"
+                                src="./images/LeMagicienAlbum.png" alt="">
+                            <audio controls>
+
+                                <source src="./audios/Le magicien - Audio.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                        <div
+                            style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 30px 0 20px 0;">
+                            <h5 style="color: aliceblue;">Capitaine Québec</h5>
+                            <img style="width: 100px; height:100px; margin-bottom: 10px;"
+                                src="./images/CapitaineQuebecAlbum.png" alt="">
+                            <audio controls>
+                                <source src="./audios/Capitaine Québec - Audio.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen8">
+                    <h1 style="margin: 20px; color: aliceblue;">À propos</h1>
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen9">
+                    <h1 style="margin: 20px; color: aliceblue;">Logiciels</h1>
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- Projets TEL -->
+                <div class="PhoneAppOpen" id="PhoneAppOpen10">
+                    <h1 style="margin: 20px; color: aliceblue;">Application</h1>
+                    <div>
+                    </div>
+                </div>
+
+                <!-- Bouton home téléphone -->
             </div>
             <div class="phoneBottom">
-                <button class="phoneHomeButton"></button>
+                <button onclick="CachePhoneApp()" class="phoneHomeButton"></button>
             </div>
         </div>
     </main>
