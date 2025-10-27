@@ -35,7 +35,7 @@ header {
     border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: flex-start;
-    height: 50px;
+    height: 60px;
     align-items: center;
     z-index: 1000;
 }
@@ -76,7 +76,7 @@ header {
 }
 
 .Row1 {
-    height: 100vh;
+    height: 92vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -169,6 +169,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
+    height: 96vh;
 }
 
 .fake-window {
@@ -488,7 +489,10 @@ header {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         gap: 15px;
-        margin: 5vh 5% 0 9%;
+        margin: 0 auto;
+        margin-top: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
 
     .phoneAppNames {

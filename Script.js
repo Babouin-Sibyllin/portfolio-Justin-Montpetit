@@ -44,6 +44,7 @@ createApp({
 
 //DÉBUT DU JAVASCRIPT POUR L'AFFICHAGE TÉLÉPHONE
 let isVisible = false;
+let activePhoneBackground = null;
 
 
 
