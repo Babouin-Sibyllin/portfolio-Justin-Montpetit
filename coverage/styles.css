@@ -409,29 +409,39 @@ header {
 
 .buttonOld {
     color: rgb(173, 54, 54);
-  font-family: inherit;
-  border: none;
-  outline: 1px dotted rgb(37, 37, 37);
-  outline-offset: -4px;
-  cursor: pointer;
-  background: hsl(0deg 0% 75%);
-  box-shadow:
-    inset -1px -1px #292929,
-    inset 1px 1px #fff,
-    inset -2px -2px rgb(158, 158, 158),
-    inset 2px 2px #ffffff;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 5px 30px;
+    font-family: inherit;
+    border: none;
+    outline: 1px dotted rgb(37, 37, 37);
+    outline-offset: -4px;
+    cursor: pointer;
+    background: hsl(0deg 0% 75%);
+    box-shadow:
+        inset -1px -1px #292929,
+        inset 1px 1px #fff,
+        inset -2px -2px rgb(158, 158, 158),
+        inset 2px 2px #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 30px;
 }
 
 .buttonOld:active {
-  box-shadow:
-    inset -1px -1px #fff,
-    inset 1px 1px #292929,
-    inset -2px -2px #ffffff,
-    inset 2px 2px rgb(158, 158, 158);
+    box-shadow:
+        inset -1px -1px #fff,
+        inset 1px 1px #292929,
+        inset -2px -2px #ffffff,
+        inset 2px 2px rgb(158, 158, 158);
+}
+
+.PhoneProjectPage {
+    display: flex;
+    flex-direction: column;
+    /* stack projects vertically */
+    align-items: center;
+    /* centers items horizontally */
+    justify-content: flex-start;
+    width: 100%;
 }
 
 
@@ -689,12 +699,18 @@ header {
     .PhoneAppOpen {
         background-color: rgb(56, 56, 56);
         position: absolute;
-        height: 100vh;
+        /* Height 90 car le bottom bar prend 10vh & top 0 pour assurer que la page reste au haut de l'écran */
+        height: 90vh;
         width: 100vw;
         top: 0;
         left: 0;
         display: none;
+        overflow-y: auto;
     }
+
+    .PhoneAppOpen::-webkit-scrollbar {
+        display: none;
+      }
 
     .PhoneImageContainer {
         display: grid;
@@ -706,27 +722,28 @@ header {
 
     .PhoneImageContainer img {
         justify-self: center;
-        /* horizontal inside the cell */
+        /* centre horizontalement */
         align-self: center;
-        /* vertical inside the cell */
+        /* Centre verticalement */
     }
 
-    .PhoneProjets {
+    .PhoneProject {
+        width: 75vw;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
         gap: 8px;
     }
 
-    .PhoneProjets div{
+    .PhoneProject div {
         justify-self: center;
         align-self: center;
     }
 
     .PhoneMyProject {
-        height: 150px;
-        width: 350px;
-        margin: 10px 20px 0 20px;
+        height: 135px;
+        width: 85vw;
+        margin: 15px 0 15px 0;
         border: solid 2px black;
         display: flex;
         justify-content: center;

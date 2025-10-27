@@ -135,6 +135,26 @@ const closeBtns = {};
 let globalIndex = 1;
 
 
+function GetTime() {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+
+  document.getElementById('PhoneTime').innerHTML = `${hours}:${minutes}`;
+}
+
+// Appelle la fonction
+GetTime();
+
+// À chaque minute, update le temps
+setInterval(GetTime, 1000 * 60);
+
+
+
 AppclickOnce.forEach(element => {
   element.addEventListener('click', (e) => {
 
