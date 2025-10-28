@@ -307,7 +307,7 @@ header {
 
 .fake-window9 {
     height: 75vh;
-    width: 55vw;
+    width: 35vw;
 }
 
 .fake-window10 {
@@ -466,6 +466,14 @@ header {
     width: 100%;
 }
 
+.LogicielsUsed {
+    border: solid 2px black;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* retire le jeu implémenté dans la fenêtre si celle-ci est trop petite*/
 @media only screen and (max-width: 1475px) {

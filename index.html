@@ -10,7 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -329,7 +329,7 @@
                     <div class="centerText" style="margin-top: 20px;">
                         <!-- Fonction qui permet d'aller directement chercher le titre de "id 4" -->
                         <h1 style="font-size: 56px;" class="PageFont">{{ projects.find(p => p.id === 4)?.title }}</h1>
-                        <h2 style="font-size: 56px; " class="PageFont">{{ projects.find(p => p.id === 4)?.category }}
+                        <h2 style="font-size: 42px; " class="PageFont">{{ projects.find(p => p.id === 4)?.category }}
                         </h2>
                     </div>
                     <div class="ProjectDescription">
@@ -376,19 +376,24 @@
                 <div class="window-body9 window-body">
                     <div class="centerText" style="margin-top: 20px;">
                         <h1 style="font-size: 56px;" class="PageFont">À propos de moi</h1>
-                        <p class="PageFont" style="font-size: large; text-align: center; margin: 5% 25% 0 25%;">Je m'appelle
-                            <b>Justin Montpetit</b>, je suis passioné par tout ce qui est technologie, informatique, histoire, jeux-vidéo,
-                            politique & philosophie. <br><br> J'adore innover, essayer de trouver des idées qui n'ont jamais été faites, tenter 
-                            de réaliser des projets qui se différencient des autres. Je suis quelqu'un de plutôt bruyant, mais je sais 
-                            me taire quand il le faut (desfois). <br><br> Je suis déjà doué de plusieurs aptitudes dans le domaine du multimédia 
-                            tel que le montage vidéo/photo, la programmation ou bien encore la 3D et je cherche toujours à en apprendre plus dans ce 
+                        <p class="PageFont" style="font-size: large; text-align: center; margin: 0 25% 0 25%;">Je
+                            m'appelle
+                            <b>Justin Montpetit</b>, je suis passioné par tout ce qui est technologie, informatique,
+                            histoire, jeux-vidéo,
+                            politique & philosophie. <br><br> J'adore innover, essayer de trouver des idées qui n'ont
+                            jamais été faites, tenter
+                            de réaliser des projets qui se différencient des autres. Je suis quelqu'un de plutôt
+                            bruyant, mais je sais
+                            me taire quand il le faut (desfois). <br><br> Je suis déjà doué de plusieurs aptitudes dans
+                            le domaine du multimédia
+                            tel que le montage <b>vidéo/photo</b>, la <b>programmation</b> ou bien encore la <b>3D</b>
+                            et je cherche toujours à en apprendre plus dans ce
                             domaine passionant.
                         </p>
                     </div>
                     <!-- Bouton Youtube -->
                     <div style="padding-bottom: 65px; display: flex; justify-content: center; margin-top: 20px;">
-                        <button onclick="openPage10()"
-                            class=".buttonOld">Mes compétences</button>
+                        <button onclick="openPage10()" class=".buttonOld">Mes compétences</button>
                     </div>
                 </div>
             </div>
@@ -400,8 +405,26 @@
                     <button class="window-close10 window-close" id="closeBtn10">X</button>
                 </div>
                 <div class="window-body10 window-body">
-                    <h1 style="font-size: 56px; text-align: center; margin: 2% 0 0 0;" class="PageFont">Mes compétences</h1>
-                    <div></div>
+                    <h1 style="font-size: 56px; text-align: center; margin: 2% 0 0 0;" class="PageFont">Mes Logiciels
+                        utilisés</h1>
+                    <div style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; margin-top: 2%;">
+                        <div>
+                            <div class="LogicielsUsed" style="background-image: url(./images/HtmlLogo.png);"></div>
+                            <h1 style="text-align: center; margin: 0 0 0 10%;" class="SkillPercent">85%</h1>
+                        </div>
+                        <div>
+                            <div class="LogicielsUsed" style="background-image: url(./images/JsLogo.webp);"></div>
+                            <h1 style="text-align: center; margin: 0 0 0 10%;">65%</h1>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <div class="LogicielsUsed" style="background-image: url(./images/DavinciLogo.png);"></div>
+                            <h1 style="text-align: center; margin: 0 0 0 10%;">70%</h1>
+                        </div>
+                        <div>
+                            <div class="LogicielsUsed" style="background-image: url(./images/MayaLogo.png);"></div>
+                            <h1 style="text-align: center; margin: 0 0 0 10%;">55%</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -409,8 +432,11 @@
 
 
 
-        <!-- interface téléphone --> <!-- interface téléphone --> <!-- interface téléphone --><!-- interface téléphone -->
-        
+        <!-- interface téléphone -->
+        <!-- interface téléphone -->
+        <!-- interface téléphone -->
+        <!-- interface téléphone -->
+
 
 
         <div class="phoneScreen" id="PhoneScreenID">
