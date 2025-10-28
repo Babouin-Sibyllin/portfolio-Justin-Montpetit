@@ -285,6 +285,11 @@ header {
     text-align: center;
 }
 
+.fake-window3 {
+    height: 85vh;
+    width: 55vw;
+}
+
 .fake-window4 {
     height: 85vh;
     width: 55vw;
@@ -300,10 +305,24 @@ header {
     width: 55vw;
 }
 
+.fake-window9 {
+    height: 75vh;
+    width: 55vw;
+}
+
+.fake-window10 {
+    height: 65vh;
+    width: 65vw;
+}
+
 .window-body {
     height: 100%;
     flex: 1;
     overflow: auto;
+}
+
+.window-body3 {
+    padding-bottom: 45px;
 }
 
 .window-body4 {
@@ -311,6 +330,8 @@ header {
     flex: 1;
     overflow: hidden;
 }
+
+
 
 .BackgroundGroup {
     display: flex;
@@ -567,6 +588,22 @@ header {
     .phoneIcon7 {
         background-color: #ffffff;
         background-image: url(./images/MusicIcon.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .phoneIcon8 {
+        background-color: #ffffff;
+        background-image: url(./images/infoIcon.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .phoneIcon9 {
+        background-color: #ffffff;
+        background-image: url(./images/abilitiesIcon.png);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

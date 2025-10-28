@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Shadow Box",
-    "category": "Jeu vidéo",
+    "category": "Jeu vidéo en réalité virtuelle",
     "images": "./images/ShadowBox.png"
   },
   {
@@ -14,13 +14,13 @@
   {
     "id": 3,
     "title": "Terminus",
-    "category": "Vidéo",
+    "category": "Court-métrage",
     "images": "./images/Terminus.png"
   },
   {
     "id": 4,
     "title": "Perte",
-    "category": "Vidéo 3D",
+    "category": "Court-métrage 3D",
     "images": "./images/Perte.png"
   }
 ]
