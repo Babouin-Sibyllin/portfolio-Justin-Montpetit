@@ -466,26 +466,6 @@ header {
         inset 2px 2px rgb(158, 158, 158);
 }
 
-.buttonOldPhone {
-    font-family: inherit;
-    border: none;
-    outline: 1px dotted rgb(37, 37, 37);
-    outline-offset: -4px;
-    cursor: pointer;
-    background: #833AB4;
-    background: linear-gradient(338deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 20%, rgba(253, 83, 44, 1) 77%, rgba(252, 176, 69, 1) 100%);
-    box-shadow:
-        inset -1px -1px #292929,
-        inset 1px 1px #fff,
-        inset -2px -2px rgb(158, 158, 158),
-        inset 2px 2px #ffffff;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 15px 30px;
-    margin-top: 5%;
-}
-
 .PhoneProjectPage {
     display: flex;
     flex-direction: column;
@@ -560,7 +540,25 @@ header {
         height: 100vh;
     }
 
-
+    .buttonOldPhone {
+    font-family: inherit;
+    border: none;
+    outline: 1px dotted rgb(37, 37, 37);
+    outline-offset: -4px;
+    cursor: pointer;
+    background: #833AB4;
+    background: linear-gradient(338deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 20%, rgba(253, 83, 44, 1) 77%, rgba(252, 176, 69, 1) 100%);
+    box-shadow:
+        inset -1px -1px #292929,
+        inset 1px 1px #fff,
+        inset -2px -2px rgb(158, 158, 158),
+        inset 2px 2px #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 30px;
+    margin-top: 5%;
+}
 
     .phoneApps {
         display: grid;
