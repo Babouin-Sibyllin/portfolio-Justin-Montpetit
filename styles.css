@@ -187,6 +187,7 @@ header {
     width: 25vw;
     height: 25vh;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .window-header {
