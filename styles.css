@@ -59,6 +59,10 @@ header {
     border-radius: 0 20px 20px 0;
 }
 
+.nameTitle:hover {
+    cursor: pointer;
+}
+
 .Window {
     margin: 0px 25px 0px 25px;
     background: none;
@@ -371,6 +375,13 @@ header {
     background-repeat: no-repeat;
 }
 
+.BackgroundSelection4 {
+    background-image: url(./images/MountainBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .intro {
     position: absolute;
     background-color: black;
@@ -430,7 +441,6 @@ header {
 
 
 .buttonOld {
-    color: rgb(173, 54, 54);
     font-family: inherit;
     border: none;
     outline: 1px dotted rgb(37, 37, 37);
@@ -456,6 +466,26 @@ header {
         inset 2px 2px rgb(158, 158, 158);
 }
 
+.buttonOldPhone {
+    font-family: inherit;
+    border: none;
+    outline: 1px dotted rgb(37, 37, 37);
+    outline-offset: -4px;
+    cursor: pointer;
+    background: #833AB4;
+    background: linear-gradient(338deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 20%, rgba(253, 83, 44, 1) 77%, rgba(252, 176, 69, 1) 100%);
+    box-shadow:
+        inset -1px -1px #292929,
+        inset 1px 1px #fff,
+        inset -2px -2px rgb(158, 158, 158),
+        inset 2px 2px #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 30px;
+    margin-top: 5%;
+}
+
 .PhoneProjectPage {
     display: flex;
     flex-direction: column;
@@ -479,6 +509,11 @@ header {
     cursor: pointer;
 }
 
+.DarkModeEnabled {
+    background-color: rgb(48, 48, 48);
+    color: aliceblue;
+}
+
 /* retire le jeu implémenté dans la fenêtre si celle-ci est trop petite*/
 @media only screen and (max-width: 1475px) {
     .embeddedGame {
@@ -492,12 +527,12 @@ header {
     }
 
     .window-body4 {
-    /* Le header d'une fenêtre mesure approximativement 50px */
-    height: calc(100% - 50px);
-    flex: 1;
-    overflow: auto;
-    padding-bottom: 85px;
-}
+        /* Le header d'une fenêtre mesure approximativement 50px */
+        height: calc(100% - 50px);
+        flex: 1;
+        overflow: auto;
+        padding-bottom: 85px;
+    }
 }
 
 
@@ -524,6 +559,8 @@ header {
         width: 100vw;
         height: 100vh;
     }
+
+
 
     .phoneApps {
         display: grid;
@@ -771,7 +808,7 @@ header {
 
     .PhoneAppOpen::-webkit-scrollbar {
         display: none;
-      }
+    }
 
     .PhoneImageContainer {
         display: grid;

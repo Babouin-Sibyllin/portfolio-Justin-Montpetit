@@ -15,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="icon" type="image/png" href="./images/FavIcon.png">
 </head>
 
 <body id="bodyID">
@@ -24,8 +25,8 @@
 
         <!-- Barre bleue au bas de l'écran -->
         <header>
-            <div class="nameTitle">
-                <h1 class="Windowsh1 PageFont">Justin Montpetit - PORTFOLIO</h1>
+            <div @click="DarkModeSwitch()" class="nameTitle">
+                <h1 class="Windowsh1 PageFont">Justin Montpetit - {{DarkModeOnOff}}</h1>
             </div>
             <button onclick="openPage9()" class="Window PageFont">À propos</button>
             <button onclick="openPage2()" class="Window PageFont">Projets</button>
@@ -73,7 +74,7 @@
             </div>
 
             <!-- window fond d'écran -->
-            <div id="computerWindow1" class="fake-window1 fake-window">
+            <div id="computerWindow1" class="fake-window1 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header1 window-header" id="dragHandle1">
                     <span>Fond d'écran</span>
                     <button class="window-close1 window-close" id="closeBtn1">X</button>
@@ -85,13 +86,13 @@
                             class="BackgroundSelection BackgroundSelection1"></button>
                         <button onclick="background2()" class="BackgroundSelection BackgroundSelection2"></button>
                         <button onclick="background3()" class="BackgroundSelection BackgroundSelection3"></button>
-                        <button class="BackgroundSelection BackgroundSelection4"></button>
+                        <button onclick="background4()" class="BackgroundSelection BackgroundSelection4"></button>
                     </div>
                 </div>
             </div>
 
             <!-- window Projets -->
-            <div id="computerWindow2" class="fake-window2 fake-window">
+            <div id="computerWindow2" class="fake-window2 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header2 window-header" id="dragHandle2">
                     <span class="PageFont">Mes projets</span>
                     <button class="window-close2 window-close" id="closeBtn2">X</button>
@@ -107,7 +108,7 @@
             </div>
 
             <!-- window Shadow Box -->
-            <div id="computerWindow3" class="fake-window3 fake-window">
+            <div id="computerWindow3" class="fake-window3 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header3 window-header" id="dragHandle3">
                     <span class="PageFont">Shadow Box</span>
                     <button class="window-close3 window-close" id="closeBtn3">X</button>
@@ -131,76 +132,88 @@
                         </div>
                     </div>
                     <div class="centerText" style="margin-top: 20px;">
-                        <h1 style="font-size: 3vw;" class="PageFont"><b>Shadow Box</b></h1>
-                        <h2 style="font-size: 2vw; " class="PageFont">Jeu de réalité virtuelle</h2>
+                        <h1 style="font-size: 6vw;" class="PageFont"><b>Shadow Box</b></h1>
+                        <!-- Bouton Youtube -->
+                        <div style="display: flex; justify-content: center; margin: 20px 0 20px 0">
+                            <button onclick="window.open('//www.youtube.com/watch?v=fIyL9LlJ2MU')"
+                                class="buttonOld">Visionner sur Youtube</button>
+                        </div>
+                        <h2 style="font-size: 4vw; " class="PageFont">Jeu de réalité virtuelle</h2>
                     </div>
                     <div class="ProjectDescription">
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">Shadow Box est un jeu de
-                            réalité
-                            virtuelle de combat créé & développé par <b>Justin Montpetit</b>, <b>Patricia Nassif</b>
-                            ainsi que
-                            <b>Félix Lavoie</b>.
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;" v-html="projects.find(p => p.id === 1)?.description"></p>>
                         </p>
-                        <h3 style="font-size: 32px; text-align: center; margin-top: 20px;" class="PageFont">
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 20px;" class="PageFont">
                             <b>Description du projet:</b>
                         </h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">Shadow Box est un jeu dans
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">Shadow Box est un jeu dans
                             lequel le joueur
                             est le "underdog" et doit combattre plusieurs boss plus forts que lui dans un combat de boxe
                             mouvementé.
                             <br><br> Shadow Box reprend le concept original de <a target="_blank"
-                                href="https://en.wikipedia.org/wiki/Punch-Out!! ">Punch out</a>
-                            , le fameux jeu de boxe par Nintendo, mais l'adapte dans un format de réalité virtuelle
+                                href="https://en.wikipedia.org/wiki/Punch-Out!! ">Punch out</a>,
+                                 le fameux jeu de boxe par Nintendo, mais l'adapte dans un format de réalité virtuelle
                             immersive
                         </p>
-                        <h3 style="font-size: 32px; text-align: center; margin-top: 30px;" class="PageFont">
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont">
                             <b><u>Étapes:</u></b>
                         </h3>
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 1:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">"Brainstormer" sur des
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">"Brainstormer" sur des
                             idées de jeux retro
                             que l'on pourrait s'inspirer de pour faire notre jeu vidéo.
                         </p>
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 2:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">Aller chercher les
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">Aller chercher les
                             "Assets" nécessaires à
                             la création du jeu.
                         </p>
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 3:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">Créer une maquette filaire
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">Créer une maquette filaire
                             illustrant
                             les différents "chemins" possible de prendre.
                         </p>
                         <img style="width: 80%;display: block; margin: 0 auto; margin-top: 35px; border: solid 2px black;"
                             src="./images/ShadowBoxMaquette.png">
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 4:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">Création de la "map", des
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">Création de la "map", des
                             menus & des animations
                             des personnages afin de les intégrés au jeu lorsqu'elles seront prêtes.
                         </p>
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 5:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;">Commencer la programmation
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">Commencer la programmation
                             du joueur,
                             de l'ennemi, du système de colision ainsi que le comportement de l'ennemi.
                         </p>
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 6:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;"> Connecter l'osc et le
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;"> Connecter l'osc et le
                             configurer à
                             l'intérieur de Touch Designer
                         </p>
-                        <h3 style="font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="font-size: 3vw; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
                                 7:</b></h3>
-                        <p style="font-size: 1vw; text-align: center; margin: 0 25% 0 25%;"> Une fois le jeu
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;"> Une fois le jeu
                             "terminé", nous l'avons
                             testé, afin de trouver des potentiels problèmes de jouabilité ou des failles dans le
                             programme afin de les
                             corrigées.
+                        </p>
+                        <h3 style="font-size: 3vw; text-align: center; margin: 30px 0 20px 0;" class="PageFont">
+                            <b><u>Collaborateurs:</u></b></h3>
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 0 25%;">
+                            <b>Création de la Map:</b> <br> Félix Lavoie <br><br> <b>Configuration de l'OSC:</b> <br>
+                            Patricia Nassif <br><br>
+                            <b>Animations:</b> <br> Justin Montpetit <br><br> <b>Programmation des collisions du
+                                joueur:</b> <br> Félix Lavoie <br><br>
+                            <b>Direction artistique/Design:</b> <br> Patricia Nassif <br><br> <b>Programmation du
+                                boss:</b> <br> Justin Montpetit <br><br>
+                            <b>Assets:</b> <br> Unity asset store <br> Kenney.com
                         </p>
                     </div>
                     <!-- Fin de la fenêtre -->
@@ -208,7 +221,7 @@
             </div>
 
             <!-- window La nuit des Longs Couteaux -->
-            <div id="computerWindow4" class="fake-window4 fake-window">
+            <div id="computerWindow4" class="fake-window4 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header4 window-header" id="dragHandle4">
                     <span class="PageFont">La Nuit des Longs Couteaux</span>
                     <button class="window-close4 window-close" id="closeBtn4">X</button>
@@ -245,19 +258,13 @@
                             <div style="display: flex; justify-content: center; margin-top: 20px;">
                                 <button
                                     onclick="window.open('//html-classic.itch.zone/html/12208113/La_nuit_des_longs_couteaux/index.html')"
-                                    class=".buttonOld">Jouer !</button>
+                                    class="buttonOld">Jouer !</button>
                             </div>
                             <h3 style="font-size: 3vw; text-align: center;" class="PageFont">
                                 <br>
                                 <u>Description:</u>
                             </h3>
-                            <p style="font-size: 2vw; text-align: center; margin: 0 25% 10% 25%;"> <br> La Nuit des
-                                Longs
-                                Couteaux est un jeu vidéo hébergable sur navigateur qui reprend un événement historique
-                                réel
-                                (La nuit des Longs Couteaux), dans lequel on incarne René Lévèsque qui doit se dépêcher
-                                à
-                                assister à la réunion organisé par les autres provinces alors qu'il dormait.
+                            <p style="font-size: 2vw; text-align: center; margin: 0 25% 10% 25%;" v-html="projects.find(p => p.id === 2)?.description">
                             </p>
                             <h3 style="font-size: 3vw; text-align: center;" class="PageFont">
                                 <u>Création:</u>
@@ -279,7 +286,7 @@
             </div>
 
             <!-- window Terminus -->
-            <div id="computerWindow5" class="fake-window5 fake-window">
+            <div id="computerWindow5" class="fake-window5 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header5 window-header" id="dragHandle5">
                     <span class="PageFont">Terminus</span>
                     <button class="window-close5 window-close" id="closeBtn5">X</button>
@@ -312,18 +319,13 @@
                         <!-- Bouton Youtube -->
                         <div style="display: flex; justify-content: center; margin: 20px 0 0 0">
                             <button onclick="window.open('//www.youtube.com/watch?v=ubJ5NW0lCwo')"
-                                class=".buttonOld">Visionner sur Youtube</button>
+                                class="buttonOld">Visionner sur Youtube</button>
                         </div>
                         <h3 style="font-size: 3vw; text-align: center;" class="PageFont">
                             <br>
                             <u>Description:</u>
                         </h3>
-                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 10% 25%;"> <br> Terminus est un
-                            court
-                            métrage réalisé par <b>Justin Montpetit</b>, <b>Alexandre Gendron</b>,
-                            <b>Mathieu Willett</b>, <b>Mikael Arseneau</b> et <b>Sandrine Jean</b>. Terminus raconte les
-                            effets
-                            négatifs de l'alcool au volant.
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 10% 25%;" v-html="projects.find(p => p.id === 3)?.description">
                         </p>
                         <h3 style="font-size: 3vw; text-align: center;" class="PageFont">
                             <u>Collaborateurs:</u>
@@ -352,7 +354,7 @@
             </div>
 
             <!-- window Perte -->
-            <div id="computerWindow6" class="fake-window6 fake-window">
+            <div id="computerWindow6" class="fake-window6 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header6 window-header" id="dragHandle6">
                     <span class="PageFont">Perte</span>
                     <button class="window-close6 window-close" id="closeBtn6">X</button>
@@ -385,15 +387,14 @@
                         <!-- Bouton Youtube -->
                         <div style="display: flex; justify-content: center; margin: 20px 0 0 0">
                             <button onclick="window.open('//www.youtube.com/watch?v=ubJ5NW0lCwo')"
-                                class=".buttonOld">Visionner sur Youtube</button>
+                                class="buttonOld">Visionner sur Youtube</button>
                         </div>
                         <h3 style="font-size: 3vw; text-align: center;" class="PageFont">
                             <br>
                             <u>Description:</u>
                         </h3>
-                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 10% 25%;"> <br> Perte
-                            est un court-métrage 3D réalisé sur Maya & Davinci par Justin Montpetit qui représente
-                            la solitude et le rejet et les effets néfastes qui en suivent.
+                        <p style="font-size: 2vw; text-align: center; margin: 0 25% 10% 25%;"> <br> 
+                            {{ projects.find(p => p.id === 4)?.description }}
                         </p>
                         <h3 style="font-size: 3vw; text-align: center;" class="PageFont">
                             <u>Création:</u>
@@ -423,7 +424,7 @@
             </div>
 
             <!-- window Voiture -->
-            <div id="computerWindow7" class="fake-window7 fake-window">
+            <div id="computerWindow7" class="fake-window7 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header7  window-header" id="dragHandle7">
                     <span class="PageFont">Voiture</span>
                     <button class="window-close7 window-close" id="closeBtn7">X</button>
@@ -434,7 +435,7 @@
             </div>
 
             <!-- window WebApp -->
-            <div id="computerWindow8" class="fake-window8 fake-window">
+            <div id="computerWindow8" class="fake-window8 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header8  window-header" id="dragHandle8">
                     <span class="PageFont">WebApp</span>
                     <button class="window-close8 window-close" id="closeBtn8">X</button>
@@ -443,7 +444,7 @@
             </div>
 
             <!-- window À propos -->
-            <div id="computerWindow9" class="fake-window9 fake-window">
+            <div id="computerWindow9" class="fake-window9 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header9  window-header" id="dragHandle9">
                     <span class="PageFont">À propos</span>
                     <button class="window-close9 window-close" id="closeBtn9">X</button>
@@ -453,20 +454,27 @@
                         <h1 style="font-size: 4vw;" class="PageFont">À propos de moi</h1>
                         <img style="border: solid 2px black; width: 10vw; height: 20vh; margin: 10px 0 20px 0;" src=""
                             alt="">
-                        <p v-html="projects.find(p => p.id === 4)?.texte" class="PageFont"
+                        <p class="PageFont"
                             style="font-size: 1.5vw; text-align: center; margin: 0 25% 0 25%;">
-
+                            Je m'appelle <b>Justin Montpetit</b>, je suis passioné par tout ce qui est
+                            <b>technologie</b>, <b>informatique</b>, <b>histoire</b>, <b>jeux-vidéo</b>,
+                            <b>politique</b> et <b>philosophie</b>. <br><br> J'adore innover, essayer de trouver des
+                            idées qui n'ont jamais été faites, tenter de réaliser des projets qui se différencient des
+                            autres. Je suis quelqu'un de plutôt bruyant, mais je sais me taire quand il le faut.
+                            <br><br> Je suis déjà doué de plusieurs aptitudes dans le domaine du multimédia tel que le
+                            <b>montage vidéo/photo</b>, la <b>programmation</b> ou bien encore la <b>3D</b>, et je
+                            cherche toujours à en apprendre plus sur ce monde passionant.
                         </p>
                     </div>
                     <!-- Bouton compétences -->
                     <div style="padding-bottom: 65px; display: flex; justify-content: center; margin-top: 20px;">
-                        <button onclick="openPage10()" class=".buttonOld">Mes compétences</button>
+                        <button onclick="openPage10()" class="buttonOld">Mes compétences</button>
                     </div>
                 </div>
             </div>
 
             <!-- window Logiciels -->
-            <div id="computerWindow10" class="fake-window10 fake-window">
+            <div id="computerWindow10" class="fake-window10 fake-window" :class="{DarkModeEnabled: DarkMode === true}">
                 <div class="window-header10  window-header" id="dragHandle10">
                     <span class="PageFont">Logiciels</span>
                     <button class="window-close10 window-close" id="closeBtn10">X</button>
@@ -587,13 +595,13 @@
                 <div class="PhoneAppOpen" id="PhoneAppOpen1">
                     <h1 style=" font-size: 6vw; margin: 20px; color: aliceblue;">Définir un nouveau fond d'écran:</h1>
                     <div class="PhoneImageContainer">
-                        <img onclick="PhoneBackground()" style="width: 150px; height: 267px; margin: 5px;"
+                        <img id="Fond1" onclick="PhoneBackground()" style="width: 150px; height: 267px; margin: 5px; border: solid aliceblue 2px"
                             src="./images/PhoneBackground.jpg">
-                        <img onclick="PhoneBackground1()" style="width: 150px; height: 267px; margin: 5px;"
+                        <img id="Fond2" onclick="PhoneBackground1()" style="width: 150px; height: 267px; margin: 5px;"
                             src="./images/PhoneBackground1.avif">
-                        <img onclick="PhoneBackground2()" style="width: 150px; height: 267px; margin: 5px;"
+                        <img id="Fond3" onclick="PhoneBackground2()" style="width: 150px; height: 267px; margin: 5px;"
                             src="./images/PhoneBackground2.avif">
-                        <img onclick=" PhoneBackground3()" style="width: 150px; height: 267px; margin: 5px;"
+                        <img id="Fond4" onclick=" PhoneBackground3()" style="width: 150px; height: 267px; margin: 5px;"
                             src="./images/PhoneBackground3.avif">
                     </div>
                 </div>
@@ -619,6 +627,11 @@
                 <!-- Shadow Box TEL -->
                 <div class="PhoneAppOpen" id="PhoneAppOpen3">
                     <h1 style=" font-size: 6vw; margin: 20px; color: aliceblue;" class="PageFont">Shadow Box</h1>
+                    <!-- Bouton Youtube -->
+                        <div style="display: flex; justify-content: center; margin: 20px 0 20px 0">
+                            <button onclick="window.open('//www.youtube.com/watch?v=fIyL9LlJ2MU')"
+                                class="buttonOldPhone"><b>Visionner sur Youtube</b></button>
+                        </div>
                     <div class="PhoneProjectPage" style="color: aliceblue;">
                         <h3 style="font-size: 5vw; color: aliceblue; text-align: center; margin-top: 5%;"
                             class="PageFont"><b><u>Intro:</u></b></h3>
@@ -631,7 +644,8 @@
                         <h3 style="font-size: 5vw; text-align: center; margin-top: 20px;" class="PageFont">
                             <b><u>Description du projet:</u></b>
                         </h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Shadow Box est un jeu dans
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Shadow Box
+                            est un jeu dans
                             lequel le joueur
                             est le "underdog" et doit combattre plusieurs boss plus forts que lui dans un combat de boxe
                             mouvementé.
@@ -640,50 +654,65 @@
                             , le fameux jeu de boxe par Nintendo, mais l'adapte dans un format de réalité virtuelle
                             immersive
                         </p>
-                        <h3 style="color: aliceblue; font-size: 5vw; text-align: center; margin-top: 30px;" class="PageFont">
+                        <h3 style="color: aliceblue; font-size: 5vw; text-align: center; margin-top: 30px;"
+                            class="PageFont">
                             <b><u>Étapes:</u></b>
                         </h3>
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 1:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">"Brainstormer" sur des
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">
+                            "Brainstormer" sur des
                             idées de jeux retro
                             que l'on pourrait s'inspirer de pour faire notre jeu vidéo.
                         </p>
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 2:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Aller chercher les
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Aller
+                            chercher les
                             "Assets" nécessaires à
                             la création du jeu.
                         </p>
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 3:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Créer une maquette filaire
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Créer une
+                            maquette filaire
                             illustrant
                             les différents "chemins" possible de prendre.
                         </p>
                         <img style="width: 80%;display: block; margin: 0 auto; margin-top: 35px; border: solid 2px black;"
                             src="./images/ShadowBoxMaquette.png">
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 4:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Création de la "map", des
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Création
+                            de la "map", des
                             menus & des animations
                             des personnages afin de les intégrés au jeu lorsqu'elles seront prêtes.
                         </p>
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 5:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Commencer la programmation
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;">Commencer
+                            la programmation
                             du joueur,
                             de l'ennemi, du système de colision ainsi que le comportement de l'ennemi.
                         </p>
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 6:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;"> Connecter l'osc et le
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 0 25%;"> Connecter
+                            l'osc et le
                             configurer à
                             l'intérieur de Touch Designer
                         </p>
-                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;" class="PageFont"><b>Étape
+                        <h3 style="color: aliceblue; font-size: 23px; text-align: center; margin-top: 30px;"
+                            class="PageFont"><b>Étape
                                 7:</b></h3>
-                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 10% 25%;"> Une fois le jeu
+                        <p style="color: aliceblue; font-size: 4vw; text-align: center; margin: 0 25% 10% 25%;"> Une
+                            fois le jeu
                             "terminé", nous l'avons
                             testé, afin de trouver des potentiels problèmes de jouabilité ou des failles dans le
                             programme afin de les
@@ -726,6 +755,10 @@
                 <!-- Terminus TEL -->
                 <div class="PhoneAppOpen" id="PhoneAppOpen5">
                     <h1 style="font-size: 6vw; margin: 20px; color: aliceblue;" class="PageFont">Terminus</h1>
+                    <div style="display: flex; justify-content: center; margin: 20px 0 20px 0">
+                            <button onclick="window.open('//youtu.be/ubJ5NW0lCwo')"
+                                class="buttonOldPhone"><b>Visionner sur Youtube</b></button>
+                        </div>
                     <div class="PhoneProjectPage">
                         <h3 style="font-size: 5vw; color: aliceblue; text-align: center; margin-top: 5%;"
                             class="PageFont"><u>Description:</u></h3>
@@ -765,6 +798,10 @@
                 <!-- Perte TEL -->
                 <div class="PhoneAppOpen" id="PhoneAppOpen6">
                     <h1 style="margin: 20px; color: aliceblue; font-size: 6vw;">Perte</h1>
+                    <div style="display: flex; justify-content: center; margin: 20px 0 20px 0">
+                            <button onclick="window.open('//youtu.be/gq0ULOzFDTA')"
+                                class="buttonOldPhone"><b>Visionner sur Youtube</b></button>
+                        </div>
                     <div class="PhoneProjectPage">
                         <h3 style="font-size: 5vw; color: aliceblue; text-align: center; margin-top: 5%;"
                             class="PageFont"><u>Description:</u></h3>
@@ -920,8 +957,8 @@
             </div>
         </div>
     </main>
-    <script src="Script.js"></script>
-    <script src="ScriptVue.js"></script>
+    <script src="Script.js" defer></script>
+    <script src="ScriptVue.js" defer></script>
 
 </body>
 

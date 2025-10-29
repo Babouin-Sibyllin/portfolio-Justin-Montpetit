@@ -3,25 +3,28 @@
     "id": 1,
     "title": "Shadow Box",
     "category": "Jeu vidéo en réalité virtuelle",
-    "images": "./images/ShadowBox.png"
+    "images": "./images/ShadowBox.png",
+    "description": "Shadow Box est un jeu de réalité virtuelle de combat créé & développé par <b>Justin Montpetit</b>, <b>Patricia Nassif</b> ainsi que <b>Félix Lavoie</b>."
   },
   {
     "id": 2,
     "title": "La Nuit des Longs Couteaux",
     "category": "jeu vidéo",
-    "images": "./images/LaNuitDesLongsCouteaux.png"
+    "images": "./images/LaNuitDesLongsCouteaux.png",
+    "description": "<br> La Nuit des Longs Couteaux est un jeu vidéo hébergable sur navigateur qui reprend un événement historique réel (La nuit des Longs Couteaux), dans lequel on incarne René Lévèsque qui doit se dépêcher à assister à la réunion organisé par les autres provinces alors qu'il dormait."
   },
   {
     "id": 3,
     "title": "Terminus",
     "category": "Court-métrage",
-    "images": "./images/Terminus.png"
+    "images": "./images/Terminus.png",
+    "description": "<br> Terminus est un court métrage réalisé par <b>Justin Montpetit</b>, <b>Alexandre Gendron</b>, <b>Mathieu Willett</b>, <b>Mikael Arseneau</b> et <b>Sandrine Jean</b>. Terminus raconte les effets négatifs de l'alcool au volant."
   },
   {
     "id": 4,
     "title": "Perte",
     "category": "Court-métrage 3D",
     "images": "./images/Perte.png",
-    "texte": "Je m'appelle <b>Justin Montpetit</b>, je suis passioné par tout ce qui est <b>technologie</b>, <b>informatique</b>, <b>histoire</b>, <b>jeux-vidéo</b>, <b>politique</b> et <b>philosophie</b>. <br><br> J'adore innover, essayer de trouver des idées qui n'ont jamais été faites, tenter de réaliser des projets qui se différencient des autres. Je suis quelqu'un de plutôt bruyant, mais je sais me taire quand il le faut. <br><br> Je suis déjà doué de plusieurs aptitudes dans le domaine du multimédia tel que le <b>montage vidéo/photo</b>, la <b>programmation</b> ou bien encore la <b>3D</b>, et je cherche toujours à en apprendre plus sur ce monde passionant."
+    "description": "Perte est un court-métrage 3D réalisé sur Maya & Davinci par Justin Montpetit qui représente la solitude et le rejet et les effets néfastes qui en suivent."
   }
 ]
