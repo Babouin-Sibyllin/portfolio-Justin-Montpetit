@@ -21,6 +21,7 @@
     "id": 4,
     "title": "Perte",
     "category": "Court-métrage 3D",
-    "images": "./images/Perte.png"
+    "images": "./images/Perte.png",
+    "texte": "Je m'appelle <b>Justin Montpetit</b>, je suis passioné par tout ce qui est <b>technologie</b>, <b>informatique</b>, <b>histoire</b>, <b>jeux-vidéo</b>, <b>politique</b> et <b>philosophie</b>. <br><br> J'adore innover, essayer de trouver des idées qui n'ont jamais été faites, tenter de réaliser des projets qui se différencient des autres. Je suis quelqu'un de plutôt bruyant, mais je sais me taire quand il le faut. <br><br> Je suis déjà doué de plusieurs aptitudes dans le domaine du multimédia tel que le <b>montage vidéo/photo</b>, la <b>programmation</b> ou bien encore la <b>3D</b>, et je cherche toujours à en apprendre plus sur ce monde passionant."
   }
 ]

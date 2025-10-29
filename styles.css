@@ -316,7 +316,7 @@ header {
 }
 
 .window-body {
-    height: 100%;
+    height: calc(100% - 50px);
     flex: 1;
     overflow: auto;
 }
@@ -490,6 +490,14 @@ header {
         width: 100%;
         height: 100%;
     }
+
+    .window-body4 {
+    /* Le header d'une fenêtre mesure approximativement 50px */
+    height: calc(100% - 50px);
+    flex: 1;
+    overflow: auto;
+    padding-bottom: 85px;
+}
 }
 
 

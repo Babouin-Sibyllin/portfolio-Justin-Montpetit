@@ -108,12 +108,17 @@ function CachePhoneApp() {
           ease: "power4.out"
         },
         {
-
           scale: 0.3,
           y: window.innerHeight / 2,
           opacity: 0,
-          borderRadius: "28px"
-        }
+          borderRadius: "28px",
+
+          // exécuté après l'animation pour empêcher des problèmes techniques (les liens étaient toujours cliquable par accident)
+          onComplete: function() {
+
+            EveryApps[i].style.display = 'none';
+      }
+        },
       );
     }
   }
