@@ -161,7 +161,7 @@ header {
 }
 
 .icon8 {
-    background-image: url(./images/BaseBackground.jpg);
+    background-image: url(./images/EclipseAppIcon.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -310,6 +310,11 @@ header {
     width: 55vw;
 }
 
+.fake-window8 {
+    height:85vh;
+    width: 75vw;
+}
+
 .fake-window9 {
     height: 75vh;
     width: 35vw;
@@ -336,6 +341,11 @@ header {
     overflow: hidden;
 }
 
+.window-body8 {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+}
 
 
 .BackgroundGroup {
