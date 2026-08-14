@@ -304,7 +304,7 @@ OpenIntro.to({}, {
 //SYSTÈME FAUSSES FENÊTRE WINDOWS
 
 // Loop à travers toutes mes fenêtres (1–10)
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 11; i++) {
   const windowDiv = document.getElementById(`computerWindow${i}`);
   const closeBtn = document.getElementById(`closeBtn${i}`);
   const dragHandle = document.getElementById(`dragHandle${i}`);
